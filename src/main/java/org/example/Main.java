@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        DiscordClient client = DiscordClient.create("NDM4MTI2OTU4NjgyMDQ2NDY1.Gqh55K.QB04Mead6AQCuKQEXU1dZAq4F_7sspmnfuUoco");
+        DiscordClient client = DiscordClient.create(JSONFile.getJSONValueFromFile("discrodAPIKey", "keys.json"));
         Mono<Void> login = client.withGateway((GatewayDiscordClient gateway) -> {
             Mono<Void> printOnLogin = createPrintOnLogin(gateway);
             Mono<Void> handlePingCommand = createPingCommand(gateway);
